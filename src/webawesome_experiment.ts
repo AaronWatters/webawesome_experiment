@@ -1,3 +1,4 @@
+import '@awesome.me/webawesome/dist/styles/webawesome.css';
 import '@awesome.me/webawesome/dist/components/checkbox/checkbox.js';
 import '@awesome.me/webawesome/dist/components/color-picker/color-picker.js';
 import '@awesome.me/webawesome/dist/components/input/input.js';

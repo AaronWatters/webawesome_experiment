@@ -6,7 +6,8 @@ export default defineConfig({
       entry: 'src/webawesome_experiment.ts',
       name: 'WebAwesomeExperiment',
       formats: ['umd'],
-      fileName: () => 'webawesome_experiment.umd.js'
+      fileName: () => 'webawesome_experiment.umd.js',
+      cssFileName: 'webawesome_experiment'
     }
   }
 });
