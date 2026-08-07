@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WebAwesome Experiment Demo</title>
+    <script src="./dist/webawesome_experiment.umd.js"></script>
+    <style>
+      body { font-family: sans-serif; margin: 2rem; }
+      .stack { display: grid; gap: 1rem; max-width: 420px; }
+      #feedback { margin-top: 1rem; padding: 0.75rem; background: #f5f5f5; border-radius: 0.4rem; }
+    </style>
+  </head>
+  <body>
+    <h1>WebAwesome Components Demo</h1>
+    <div class="stack">
+      <wa-checkbox id="demo-checkbox">Enable feature</wa-checkbox>
+      <wa-color-picker id="demo-color" value="#00aaff"></wa-color-picker>
+      <wa-input id="demo-input" label="Text input" value="hello"></wa-input>
+      <wa-number-input id="demo-number" label="Number input" value="7"></wa-number-input>
+      <wa-slider id="demo-slider" min="0" max="100" value="30"></wa-slider>
+    </div>
+
+    <div id="feedback">Interact with any control to see event feedback.</div>
+
+    <script>
+      const feedback = document.getElementById('feedback');
+      const update = (source, value) => {
+        feedback.textContent = `${source}: ${value}`;
+      };
+
+      document.getElementById('demo-checkbox').addEventListener('change', (event) => {
+        update('checkbox change', event.target.checked);
+      });
+
+      document.getElementById('demo-color').addEventListener('input', (event) => {
+        update('color picker input', event.target.value);
+      });
+
+      document.getElementById('demo-input').addEventListener('input', (event) => {
+        update('input event', event.target.value);
+      });
+
+      document.getElementById('demo-number').addEventListener('change', (event) => {
+        update('number input change', event.target.value);
+      });
+
+      document.getElementById('demo-slider').addEventListener('input', (event) => {
+        update('slider input', event.target.value);
+      });
+    </script>
+  </body>
+</html>
