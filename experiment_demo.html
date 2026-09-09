@@ -20,13 +20,11 @@
       <wa-input id="demo-input" label="Text input" value="hello"></wa-input>
       <wa-number-input id="demo-number" label="Number input" value="7"></wa-number-input>
       <wa-slider id="demo-slider" min="0" max="100" value="30"></wa-slider>
-      <wa-dropdown>
-        <wa-button slot="trigger" caret>Actions</wa-button>
-        <wa-menu id="demo-dropdown-menu">
-          <wa-menu-item value="copy">Copy</wa-menu-item>
-          <wa-menu-item value="paste">Paste</wa-menu-item>
-          <wa-menu-item value="delete">Delete</wa-menu-item>
-        </wa-menu>
+      <wa-dropdown id="demo-dropdown">
+        <wa-button slot="trigger" with-caret>Actions</wa-button>
+        <wa-dropdown-item value="copy">Copy</wa-dropdown-item>
+        <wa-dropdown-item value="paste">Paste</wa-dropdown-item>
+        <wa-dropdown-item value="delete">Delete</wa-dropdown-item>
       </wa-dropdown>
     </div>
 
@@ -58,7 +56,7 @@
         update('slider input', event.target.value);
       });
 
-      document.getElementById('demo-dropdown-menu').addEventListener('wa-select', (event) => {
+      document.getElementById('demo-dropdown').addEventListener('wa-select', (event) => {
         const selectedValue = event.detail?.item?.value ?? '(none)';
         update('dropdown select', selectedValue);
       });
