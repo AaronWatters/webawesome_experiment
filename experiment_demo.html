@@ -20,6 +20,12 @@
       <wa-input id="demo-input" label="Text input" value="hello"></wa-input>
       <wa-number-input id="demo-number" label="Number input" value="7"></wa-number-input>
       <wa-slider id="demo-slider" min="0" max="100" value="30"></wa-slider>
+      <wa-dropdown id="demo-dropdown">
+        <wa-button slot="trigger" with-caret>Actions</wa-button>
+        <wa-dropdown-item value="copy">Copy</wa-dropdown-item>
+        <wa-dropdown-item value="paste">Paste</wa-dropdown-item>
+        <wa-dropdown-item value="delete">Delete</wa-dropdown-item>
+      </wa-dropdown>
     </div>
 
     <div id="feedback">Interact with any control to see event feedback.</div>
@@ -48,6 +54,11 @@
 
       document.getElementById('demo-slider').addEventListener('input', (event) => {
         update('slider input', event.target.value);
+      });
+
+      document.getElementById('demo-dropdown').addEventListener('wa-select', (event) => {
+        const selectedValue = event.detail?.item?.value ?? '(none)';
+        update('dropdown select', selectedValue);
       });
     </script>
   </body>
